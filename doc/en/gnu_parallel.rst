@@ -168,7 +168,7 @@ Exercise - Prepare DNA sequences
 **Instructions**
 
 #. Go to the exercise directory with ``cd
-   ~/cq-formation-cip202-main/lab/bio-info``.
+   ~/cip202-main/lab/bio-info``.
 #. Edit the ``gen-seq.sh`` file:
 
    #. Request two (2) CPU cores in the ``SBATCH`` header.
@@ -219,7 +219,7 @@ For this part, go to the examples directory with:
 
 .. code-block:: bash
 
-    cd ~/cq-formation-cip202-main/lab/gnu-parallel
+    cd ~/cip202-main/lab/gnu-parallel
 
 **a)** When there are **multiple parameter sequences to combine**, numbered
 pairs of braces such as ``{1}``, ``{2}``, etc. can be used:
@@ -331,7 +331,7 @@ By testing the correspondence of all combinations ``{A,B,C,D}`` x
 **Instructions**
 
 #. Go to the exercise directory with ``cd
-   ~/cq-formation-cip202-main/lab/bio-info``.
+   ~/cip202-main/lab/bio-info``.
 
    #. Validate the presence of the following files:
 

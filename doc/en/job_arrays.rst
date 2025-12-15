@@ -98,7 +98,7 @@ Exercise
 
 #. Log in to the virtual cluster with ``ssh login1``.
 #. Go to the directory containing the above script with ``cd
-   ~/cq-formation-cip202-main/lab/hello-array``.
+   ~/cip202-main/lab/hello-array``.
 #. Show the script with ``cat hello-job.sh``.
 #. Submit the script with ``sbatch`` and monitor the jobs with ``sq``.
 #. Once all jobs have completed, show the output files with
@@ -201,7 +201,7 @@ Exercise
    containing random numbers taken from a normal distribution.
 
    #. Go to the exercise directory with
-      ``cd ~/cq-formation-cip202-main/lab/dist-array``.
+      ``cd ~/cip202-main/lab/dist-array``.
    #. Show the job script with ``cat dist-job-single.sh``.
    #. Submit the script with ``sbatch dist-job-single.sh``.
    #. Once the job has completed, check that the output file was generated with

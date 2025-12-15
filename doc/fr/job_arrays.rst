@@ -102,7 +102,7 @@ Exercice
 
 #. Connectez-vous à la grappe virtuelle avec ``ssh login1``.
 #. Allez dans le répertoire contenant le script montré ci-haut : ``cd
-   ~/cq-formation-cip202-main/lab/hello-array``.
+   ~/cip202-main/lab/hello-array``.
 #. Affichez le contenu du script avec ``cat hello-job.sh``.
 #. Soumettez le script avec ``sbatch`` et suivez les tâches avec ``sq``.
 #. Quand toutes les tâches sont terminées, affichez les fichiers de sortie avec
@@ -212,7 +212,7 @@ Exercice
    contenant des nombres aléatoires tirés d’une distribution normale.
 
    #. Allez dans le répertoire de l’exercice avec
-      ``cd ~/cq-formation-cip202-main/lab/dist-array``.
+      ``cd ~/cip202-main/lab/dist-array``.
    #. Affichez le script de tâche avec ``cat dist-job-single.sh``.
    #. Soumettez le script avec ``sbatch dist-job-single.sh``.
    #. Une fois la tâche terminée, vérifiez que le fichier de sortie a bien été

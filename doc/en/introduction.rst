@@ -4,14 +4,14 @@ Generalities
 `Français <../fr/introduction.html>`_
 
 In `CIP201
-<https://calculquebec.github.io/cq-formation-cip201/en/task-types/parallel.html>`__,
+<https://calculquebec.github.io/cip201/en/task-types/parallel.html>`__,
 we saw the distinction between serial jobs and parallel jobs. Among parallel
 jobs, there are two subcategories:
 
 - `Task parallelism <https://en.wikipedia.org/wiki/Task_parallelism>`__.
   It is the partitioning of a single job so as to be able to take advantage
   of the power of several CPU cores simultaneously. Under good `scalability
-  <https://calculquebec.github.io/cq-formation-cip201/en/resources/cpu.html#scalability>`__
+  <https://calculquebec.github.io/cip201/en/resources/cpu.html#scalability>`__
   conditions, the calculation should be accelerated and the result obtained
   more quickly.
 - `Data parallelism <https://en.wikipedia.org/wiki/Data_parallelism>`__.

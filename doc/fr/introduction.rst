@@ -4,7 +4,7 @@ Généralités
 `English <../en/introduction.html>`_
 
 Dans `CIP201
-<https://calculquebec.github.io/cq-formation-cip201/fr/task-types/parallel.html>`__,
+<https://calculquebec.github.io/cip201/fr/task-types/parallel.html>`__,
 nous avons vu la distinction entre des tâches séquentielles et des tâches
 parallèles. Parmi les tâches parallèles, il existe deux sous-catégories :
 
@@ -13,7 +13,7 @@ parallèles. Parmi les tâches parallèles, il existe deux sous-catégories :
   C’est le partitionnement d’une même tâche de calcul de sorte à pouvoir tirer
   profit de la puissance de plusieurs cœurs CPU en simultané. Dans de bonnes
   conditions de `scalabilité
-  <https://calculquebec.github.io/cq-formation-cip201/fr/resources/cpu.html#scalabilite>`__,
+  <https://calculquebec.github.io/cip201/fr/resources/cpu.html#scalabilite>`__,
   le calcul devrait être accéléré et le résultat, obtenu plus rapidement.
 - Le `parallélisme de données
   <https://fr.wikipedia.org/wiki/Parall%C3%A9lisme_de_donn%C3%A9e>`__.
