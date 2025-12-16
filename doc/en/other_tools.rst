@@ -35,7 +35,7 @@ For this section, go to the example directory with:
 
 .. code-block:: bash
 
-    cd ~/cq-formation-cip202-main/lab/gnu-parallel
+    cd ~/cip202-main/lab/gnu-parallel
 
 To use GLOST, we must first load a module:
 

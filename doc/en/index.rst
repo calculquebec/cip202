@@ -5,7 +5,7 @@ Managing large batches of jobs
 
 This intermediate-level workshop (CIP202) is the continuation of `Job monitoring
 and resource estimation
-<https://calculquebec.github.io/cq-formation-cip201/en/index.html>`_ (CIP201).
+<https://calculquebec.github.io/cip201/en/index.html>`_ (CIP201).
 Here, we explore a branch of high-performance computing, *data parallelism*,
 using tools that allow for the easy management of large numbers of similar jobs.
 You will find these tools handy if your research project involves repeating a
@@ -32,8 +32,8 @@ such as GLOST and META-Farm.
     exercises are in your home directory on the platform.
 
     If you follow this workshop on your own, you can download the `the
-    necessary files <https://github.com/calculquebec/cq-formation-cip202>`_ and
-    do the exercises on any Calcul Québec or Digital Research Alliance of Canada
+    necessary files <https://github.com/calculquebec/cip202>`_ and do the
+    exercises on any Calcul Québec or Digital Research Alliance of Canada
     cluster. Your jobs’ wait time, however, will be longer than on the cloud
     platform.
 

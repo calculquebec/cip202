@@ -177,7 +177,7 @@ Exercice - Préparer des séquences d’ADN
 **Instructions**
 
 #. Allez dans le répertoire de l’exercice avec ``cd
-   ~/cq-formation-cip202-main/lab/bio-info``.
+   ~/cip202-main/lab/bio-info``.
 #. Éditez le fichier ``gen-seq.sh`` :
 
    #. Demandez deux (2) cœurs CPU dans l’entête ``SBATCH``.
@@ -228,7 +228,7 @@ Pour cette partie, allez dans le répertoire des exemples avec :
 
 .. code-block:: bash
 
-    cd ~/cq-formation-cip202-main/lab/gnu-parallel
+    cd ~/cip202-main/lab/gnu-parallel
 
 **a)** Lorsqu’il y a **plusieurs séquences de paramètres à combiner**, on peut
 utiliser des paires d’accolades numérotées telles que ``{1}``, ``{2}``, etc. :
@@ -341,7 +341,7 @@ En testant la correspondance de toutes les combinaisons ``{A,B,C,D}`` x
 **Instructions**
 
 #. Allez dans le répertoire de l’exercice avec ``cd
-   ~/cq-formation-cip202-main/lab/bio-info``.
+   ~/cip202-main/lab/bio-info``.
 
    #. Validez la présence des fichiers suivants :
 
