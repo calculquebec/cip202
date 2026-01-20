@@ -91,6 +91,12 @@ Ou encore toutes les tâches du vecteur :
 
     [alice@narval1 ~]$ scancel 40912550
 
+Pour annuler uniquement les tâches en attente :
+
+.. code-block:: console
+
+    [alice@narval1 ~]$ scancel 40912550 -t pending
+
 .. note::
 
     Malgré son nom, la variable ``SLURM_ARRAY_TASK_ID`` n’a rien à voir avec les
