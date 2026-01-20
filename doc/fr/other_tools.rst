@@ -195,7 +195,7 @@ séquentiel (``sleep``) qui ne demande aucune ressource particulière.
 
     # Don’t change the lines below
     #=================================================================
-    [...]
+    ...
 
 .. note::
 

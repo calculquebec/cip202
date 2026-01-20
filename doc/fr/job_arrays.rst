@@ -391,10 +391,10 @@ Le script du vecteur de tâches lit une ligne de ce fichier :
     ``sed`` est redirigée vers la commande ``read``, qui assigne les valeurs aux
     variables ``prot``, ``temp`` et ``agent``.
     
-    Un tube tel que ``sed [...] | read [...]`` ne pourrait être utilisé ici car
-    les tubes sont exécutés dans un sous-processus qui n’a pas accès aux
-    variables du processus parent, soit celui qui exécute le script. Les valeurs
-    lues seraient alors immédiatement perdues.
+    Un tube tel que ``sed ... | read ...`` ne pourrait être utilisé ici car les
+    tubes sont exécutés dans un sous-processus qui n’a pas accès aux variables
+    du processus parent, soit celui qui exécute le script. Les valeurs lues
+    seraient alors immédiatement perdues.
 
 En plus d’être simple, cette approche des vecteurs de tâches multidimensionnels
 est flexible :
