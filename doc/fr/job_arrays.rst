@@ -105,8 +105,8 @@ Exercice
 ''''''''
 
 #. Connectez-vous à la grappe virtuelle avec ``ssh login1``.
-#. Allez dans le répertoire de l’exercice, qui contient un script similaire à
-   celui montré ci-haut : ``cd ~/cip202-main/lab/hello-array``.
+#. Allez dans le répertoire de l’exercice : ``cd
+   ~/cip202-main/lab/hello-array``.
 #. Affichez le contenu du script avec ``cat hello-job.sh``.
 #. Soumettez le script avec ``sbatch`` et suivez les tâches avec ``sq``.
 #. Quand toutes les tâches sont terminées, affichez les fichiers de sortie avec
