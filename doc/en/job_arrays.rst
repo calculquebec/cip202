@@ -31,8 +31,6 @@ The following ``hello-job.sh`` script is a minimal example of a job array:
 
     echo "Hello from index $SLURM_ARRAY_TASK_ID"
 
-    sleep 60
-
 A job array script includes the ``--array`` option, which sets the job’s
 repetitions and gives each one a unique index, here from 1 to 10. This index is
 accessible using ``$SLURM_ARRAY_TASK_ID``.
@@ -87,6 +85,12 @@ To cancel all jobs in the array:
 
     [alice@narval1 ~]$ scancel 40912550
 
+To cancel only pending jobs:
+
+.. code-block:: console
+
+    [alice@narval1 ~]$ scancel 40912550 -t pending
+
 .. note::
 
     Despite its name, the ``SLURM_ARRAY_TASK_ID`` variable has nothing to do
@@ -97,8 +101,7 @@ Exercise
 ''''''''
 
 #. Log in to the virtual cluster with ``ssh login1``.
-#. Go to the directory containing the above script with ``cd
-   ~/cip202-main/lab/hello-array``.
+#. Go to the exercise directory with ``cd ~/cip202-main/lab/hello-array``.
 #. Show the script with ``cat hello-job.sh``.
 #. Submit the script with ``sbatch`` and monitor the jobs with ``sq``.
 #. Once all jobs have completed, show the output files with
@@ -369,10 +372,10 @@ The array job script reads one line from this file:
     here-string: ``sed``’s output is redirected to the ``read`` command, which
     sets variables ``prot``, ``temp``, and ``agent``.
 
-    A pipe such as ``sed [...] | read [...]`` could not be used here since pipes
-    are run in a sub-process that does not have access to the parent process’
-    variables, that is the process running the script. The values would be
-    lost immediately after reading them.
+    A pipe such as ``sed ... | read ...`` could not be used here since pipes are
+    run in a sub-process that does not have access to the parent process’
+    variables, that is the process running the script. The values would be lost
+    immediately after reading them.
 
 In addition to being simple, this approach to multidimensional job arrays is
 flexible:
