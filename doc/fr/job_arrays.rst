@@ -32,8 +32,6 @@ tâches :
 
     echo "Hello from index $SLURM_ARRAY_TASK_ID"
 
-    sleep 60
-
 Un script pour un vecteur de tâches contient l’option ``--array``, qui spécifie
 les répétitions de la tâche et assigne à chacune une valeur entière unique, ici
 de 1 à 10. Cet indice est accessible avec ``$SLURM_ARRAY_TASK_ID``.
@@ -91,6 +89,12 @@ Ou encore toutes les tâches du vecteur :
 
     [alice@narval1 ~]$ scancel 40912550
 
+Pour annuler uniquement les tâches en attente :
+
+.. code-block:: console
+
+    [alice@narval1 ~]$ scancel 40912550 -t pending
+
 .. note::
 
     Malgré son nom, la variable ``SLURM_ARRAY_TASK_ID`` n’a rien à voir avec les
@@ -101,7 +105,7 @@ Exercice
 ''''''''
 
 #. Connectez-vous à la grappe virtuelle avec ``ssh login1``.
-#. Allez dans le répertoire contenant le script montré ci-haut : ``cd
+#. Allez dans le répertoire de l’exercice : ``cd
    ~/cip202-main/lab/hello-array``.
 #. Affichez le contenu du script avec ``cat hello-job.sh``.
 #. Soumettez le script avec ``sbatch`` et suivez les tâches avec ``sq``.
@@ -385,10 +389,10 @@ Le script du vecteur de tâches lit une ligne de ce fichier :
     ``sed`` est redirigée vers la commande ``read``, qui assigne les valeurs aux
     variables ``prot``, ``temp`` et ``agent``.
     
-    Un tube tel que ``sed [...] | read [...]`` ne pourrait être utilisé ici car
-    les tubes sont exécutés dans un sous-processus qui n’a pas accès aux
-    variables du processus parent, soit celui qui exécute le script. Les valeurs
-    lues seraient alors immédiatement perdues.
+    Un tube tel que ``sed ... | read ...`` ne pourrait être utilisé ici car les
+    tubes sont exécutés dans un sous-processus qui n’a pas accès aux variables
+    du processus parent, soit celui qui exécute le script. Les valeurs lues
+    seraient alors immédiatement perdues.
 
 En plus d’être simple, cette approche des vecteurs de tâches multidimensionnels
 est flexible :
