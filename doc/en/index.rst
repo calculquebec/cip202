@@ -31,11 +31,15 @@ such as GLOST and META-Farm.
     instructor on our cloud computing platform. The files necessary for the
     exercises are in your home directory on the platform.
 
-    If you follow this workshop on your own, you can download the `the
-    necessary files <https://github.com/calculquebec/cip202>`_ and do the
-    exercises on any Calcul Québec or Digital Research Alliance of Canada
-    cluster. Your jobs’ wait time, however, will be longer than on the cloud
-    platform.
+    You can also follow this workshop on your own and do the exercises on any
+    Calcul Québec or Digital Research Alliance of Canada cluster. Your jobs’
+    wait time, however, will be longer than on the cloud platform. Download the
+    necessary files with the following command or `browse them online
+    <https://github.com/calculquebec/cip202>`__:
+
+    .. code-block:: console
+
+        git clone https://github.com/calculquebec/cip202 cip202-main
 
 .. toctree::
     :caption: Data parallelism
