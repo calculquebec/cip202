@@ -222,10 +222,9 @@ Exercice
    #. Une fois la tâche terminée, vérifiez que le fichier de sortie a bien été
       créé avec ``ls results``.
 
-#. Modifiez le script pour en faire un vecteur de tâches.
+#. Modifiez une copie du précédent script pour en faire un vecteur de tâches.
 
-   #. Copiez-le sous un autre nom : ``cp dist-job-single.sh dist-job-array.sh``.
-   #. Éditez le nouveau script avec ``nano dist-job-array.sh``.
+   #. Éditez le script avec ``nano dist-job-array.sh``.
    #. Ajoutez l’option ``--array`` pour créer un vecteur de 10 tâches.
    #. Utilisez ``$SLURM_ARRAY_TASK_ID`` pour contrôler le nom du fichier de
       sortie.

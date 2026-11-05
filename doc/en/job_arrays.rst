@@ -210,11 +210,9 @@ Exercise
    #. Once the job has completed, check that the output file was generated with
       ``ls results``.
 
-#. Modify the script to make a job array.
+#. Modify a copy of the previous script to make a job array.
 
-   #. Copy it under a different name: ``cp dist-job-single.sh
-      dist-job-array.sh``.
-   #. Edit the new script with ``nano dist-job-array.sh``.
+   #. Edit the script with ``nano dist-job-array.sh``.
    #. Add the ``--array`` option to create a 10-job array.
    #. Use ``$SLURM_ARRAY_TASK_ID`` to set the output file’s name.
    #. Optionally, use ``printf`` to generate output files whose names all have
