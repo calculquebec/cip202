@@ -124,6 +124,8 @@ de tâches. Cette approche est à proscrire :
   individuelles peut prendre plus d’une minute.
 - Maintenir de nombreuses copies de votre script de tâche est plus compliqué et
   source d’erreurs.
+- Obtenir l’état d’un groupe de tâches individuelles et procéder à des
+  annulations est plus fastidieux qu’avec un vecteur de tâches.
 
 Utiliser les vecteurs
 ---------------------
