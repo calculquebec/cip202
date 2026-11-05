@@ -112,14 +112,16 @@ Exercice
 #. Quand toutes les tâches sont terminées, affichez les fichiers de sortie avec
    ``ls`` et ``cat``.
 
-Pourquoi utiliser un vecteur ?
-''''''''''''''''''''''''''''''
+Pourquoi ne pas soumettre des tâches individuelles ?
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Plutôt que d’utiliser un vecteur, il serait possible de soumettre, manuellement
 ou à l’aide d’une boucle automatisée, des dizaines ou des centaines de scripts
 de tâches. Cette approche est à proscrire :
 
-- Des appels rapides et répétés à ``sbatch`` surchargent l’ordonnanceur.
+- Les appels en rafale à ``sbatch`` sont automatiquement ralentis pour éviter
+  de surcharger l’ordonnanceur. Ainsi, la soumission de centaines de tâches
+  individuelles peut prendre plus d’une minute.
 - Maintenir de nombreuses copies de votre script de tâche est plus compliqué et
   source d’erreurs.
 

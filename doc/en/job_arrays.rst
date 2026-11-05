@@ -107,13 +107,15 @@ Exercise
 #. Once all jobs have completed, show the output files with
    ``ls`` and ``cat``.
 
-Why use job arrays?
-'''''''''''''''''''
+Why not submit individual jobs?
+'''''''''''''''''''''''''''''''
 
 Rather than using an array, it would be possible to submit tens or hundreds of
 job scripts, manually or through an automated loop. This is to be avoided:
 
-- Fast, repeated calls to ``sbatch`` overload the scheduler.
+- Batch calls to ``sbatch`` are automatically slowed down to avoid overloading
+  the scheduler. Therefore, submitting hundreds of individual jobs may take
+  more than a minute.
 - Maintaining numerous copies of your job script is more complicated and
   error-prone.
 
