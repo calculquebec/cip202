@@ -322,14 +322,32 @@ Lorsque le nombre de paramètres à traiter dépasse deux, convertir l’indice
 linéaire :math:`i` en indices multidimensionnels avec des divisions entières et
 le modulo devient fastidieux. Il existe une alternative simple : créer un
 fichier contenant toutes les combinaisons de paramètres à traiter, une
-combinaison par ligne. Le numéro de ligne dans le fichier devient l’indice
+combinaison par ligne. Chaque ligne est implicitement numérotée d’un indice
 linéaire :math:`i`. Pour convertir :math:`i → (x,y,z,...)`, il suffit de lire
 les valeurs à la ligne correspondante.
 
 Par exemple, supposons que vous simulez la stabilité de deux protéines à trois
-températures différentes avec et sans un agent stabilisant. Un fichier
-``params.txt`` contenant les 12 combinaisons possibles de ces paramètres peut
-être créé avec le script ``make-params.sh`` suivant :
+températures différentes avec et sans un agent stabilisant, il vous faudrait un
+fichier ``params.txt`` contenant les 12 combinaisons possibles de ces
+paramètres :
+
+.. code-block:: console
+    :linenos:
+
+    A 30 true
+    A 30 false
+    A 37 true
+    A 37 false
+    A 44 true
+    A 44 false
+    B 30 true
+    B 30 false
+    B 37 true
+    B 37 false
+    B 44 true
+    B 44 false
+
+Ce fichier pourrait être créé avec le script ``make-params.sh`` suivant :
 
 .. code-block:: bash
 
@@ -348,24 +366,8 @@ températures différentes avec et sans un agent stabilisant. Un fichier
         done
     done
 
-.. code-block:: console
-
-    [alice@narval1 ~]$ bash make-params.sh
-    [alice@narval1 ~]$ cat params.txt
-    A 30 true
-    A 30 false
-    A 37 true
-    A 37 false
-    A 44 true
-    A 44 false
-    B 30 true
-    B 30 false
-    B 37 true
-    B 37 false
-    B 44 true
-    B 44 false
-
-Le script du vecteur de tâches lit une ligne de ce fichier :
+Et le script du vecteur de tâches extrairait une seule ligne de
+``params.txt`` :
 
 .. code-block:: bash
     :emphasize-lines: 7
