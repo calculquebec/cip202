@@ -113,12 +113,12 @@ Why not submit individual jobs?
 Rather than using an array, it would be possible to submit tens or hundreds of
 job scripts, manually or through an automated loop. This is to be avoided:
 
-- Batch calls to ``sbatch`` are automatically slowed down to avoid overloading
+- Burst calls to ``sbatch`` are automatically slowed down to avoid overloading
   the scheduler. Therefore, submitting hundreds of individual jobs may take
   more than a minute.
 - Maintaining numerous copies of your job script is more complicated and
   error-prone.
-- Obtaining the status of a group of individual jobs and performing
+- Getting the status of a group of individual jobs and performing
   cancellations is more tedious than with a job array.
 
 Using job arrays

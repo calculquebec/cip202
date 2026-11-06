@@ -327,7 +327,7 @@ linéaire :math:`i`. Pour convertir :math:`i → (x,y,z,...)`, il suffit de lire
 les valeurs à la ligne correspondante.
 
 Par exemple, supposons que vous simulez la stabilité de deux protéines à trois
-températures différentes avec et sans un agent stabilisant, il vous faudrait un
+températures différentes avec et sans un agent stabilisant. Il vous faudrait un
 fichier ``params.txt`` contenant les 12 combinaisons possibles de ces
 paramètres :
 
@@ -366,8 +366,7 @@ Ce fichier pourrait être créé avec le script ``make-params.sh`` suivant :
         done
     done
 
-Et le script du vecteur de tâches extrairait une seule ligne de
-``params.txt`` :
+Le script du vecteur de tâches extrait une seule ligne de ``params.txt`` :
 
 .. code-block:: bash
     :emphasize-lines: 7
