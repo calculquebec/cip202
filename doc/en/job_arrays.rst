@@ -107,15 +107,19 @@ Exercise
 #. Once all jobs have completed, show the output files with
    ``ls`` and ``cat``.
 
-Why use job arrays?
-'''''''''''''''''''
+Why not submit individual jobs?
+'''''''''''''''''''''''''''''''
 
 Rather than using an array, it would be possible to submit tens or hundreds of
 job scripts, manually or through an automated loop. This is to be avoided:
 
-- Fast, repeated calls to ``sbatch`` overload the scheduler.
+- Burst calls to ``sbatch`` are automatically slowed down to avoid overloading
+  the scheduler. Therefore, submitting hundreds of individual jobs may take
+  more than a minute.
 - Maintaining numerous copies of your job script is more complicated and
   error-prone.
+- Getting the status of a group of individual jobs and performing
+  cancellations is more tedious than with a job array.
 
 Using job arrays
 ----------------
@@ -210,11 +214,9 @@ Exercise
    #. Once the job has completed, check that the output file was generated with
       ``ls results``.
 
-#. Modify the script to make a job array.
+#. Modify a copy of the previous script to make a job array.
 
-   #. Copy it under a different name: ``cp dist-job-single.sh
-      dist-job-array.sh``.
-   #. Edit the new script with ``nano dist-job-array.sh``.
+   #. Edit the script with ``nano dist-job-array.sh``.
    #. Add the ``--array`` option to create a 10-job array.
    #. Use ``$SLURM_ARRAY_TASK_ID`` to set the output file’s name.
    #. Optionally, use ``printf`` to generate output files whose names all have
@@ -308,26 +310,8 @@ number in the file becomes the linear index :math:`i`. To convert :math:`i →
 (x,y,z,...)`, we just read the values on the corresponding line.
 
 For example, suppose you simulate the stability of two proteins, at three
-different temperatures, with and without a stabilising agent. A file
-``params.txt`` containing the 12 possible parameter combinations can be created
-with the following ``make-params.sh`` script:
-
-.. code-block:: bash
-
-    #!/bin/bash
-
-    proteins="A B"
-    temperatures="30 37 44"
-
-    rm -f params.txt
-
-    for prot in $proteins; do
-        for temp in $temperatures; do
-            for agent in true false; do
-                echo $prot $temp $agent >> params.txt
-            done
-        done
-    done
+different temperatures, with and without a stabilising agent. You would need a
+``params.txt`` file containing the 12 possible parameter combinations:
 
 .. code-block:: console
 
@@ -346,7 +330,27 @@ with the following ``make-params.sh`` script:
     B 44 true
     B 44 false
 
-The array job script reads one line from this file:
+This file can be created with the following ``make-params.sh`` script:
+
+.. code-block:: bash
+
+    #!/bin/bash
+
+    proteins="A B"
+    temperatures="30 37 44"
+
+    rm -f params.txt
+
+    for prot in $proteins; do
+        for temp in $temperatures; do
+            for agent in true false; do
+                echo $prot $temp $agent >> params.txt
+            done
+        done
+    done
+
+
+Finally, the array job script extracts a single line from this file:
 
 .. code-block:: bash
     :emphasize-lines: 7
