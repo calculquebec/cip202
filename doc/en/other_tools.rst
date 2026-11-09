@@ -258,7 +258,7 @@ and resubmitting them.
     slurm-41169148.out  slurm-41169153.out
     [alice@narval3 hello]$ ls STATUSES/
     status.41169148_1  status.41169148_2
-    [ofisette@narval3 hello]$ cat STATUSES/status.41169148_1
+    [alice@narval3 hello]$ cat STATUSES/status.41169148_1
     1 0
     3 0
     6 0

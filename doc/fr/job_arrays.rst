@@ -112,16 +112,20 @@ Exercice
 #. Quand toutes les tâches sont terminées, affichez les fichiers de sortie avec
    ``ls`` et ``cat``.
 
-Pourquoi utiliser un vecteur ?
-''''''''''''''''''''''''''''''
+Pourquoi ne pas soumettre des tâches individuelles ?
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Plutôt que d’utiliser un vecteur, il serait possible de soumettre, manuellement
 ou à l’aide d’une boucle automatisée, des dizaines ou des centaines de scripts
 de tâches. Cette approche est à proscrire :
 
-- Des appels rapides et répétés à ``sbatch`` surchargent l’ordonnanceur.
+- Les appels en rafale à ``sbatch`` sont automatiquement ralentis pour éviter
+  de surcharger l’ordonnanceur. Ainsi, la soumission de centaines de tâches
+  individuelles peut prendre plus d’une minute.
 - Maintenir de nombreuses copies de votre script de tâche est plus compliqué et
   source d’erreurs.
+- Obtenir l’état d’un groupe de tâches individuelles et procéder à des
+  annulations est plus fastidieux qu’avec un vecteur de tâches.
 
 Utiliser les vecteurs
 ---------------------
@@ -222,10 +226,9 @@ Exercice
    #. Une fois la tâche terminée, vérifiez que le fichier de sortie a bien été
       créé avec ``ls results``.
 
-#. Modifiez le script pour en faire un vecteur de tâches.
+#. Modifiez une copie du précédent script pour en faire un vecteur de tâches.
 
-   #. Copiez-le sous un autre nom : ``cp dist-job-single.sh dist-job-array.sh``.
-   #. Éditez le nouveau script avec ``nano dist-job-array.sh``.
+   #. Éditez le script avec ``nano dist-job-array.sh``.
    #. Ajoutez l’option ``--array`` pour créer un vecteur de 10 tâches.
    #. Utilisez ``$SLURM_ARRAY_TASK_ID`` pour contrôler le nom du fichier de
       sortie.
@@ -319,14 +322,32 @@ Lorsque le nombre de paramètres à traiter dépasse deux, convertir l’indice
 linéaire :math:`i` en indices multidimensionnels avec des divisions entières et
 le modulo devient fastidieux. Il existe une alternative simple : créer un
 fichier contenant toutes les combinaisons de paramètres à traiter, une
-combinaison par ligne. Le numéro de ligne dans le fichier devient l’indice
+combinaison par ligne. Chaque ligne est implicitement numérotée d’un indice
 linéaire :math:`i`. Pour convertir :math:`i → (x,y,z,...)`, il suffit de lire
 les valeurs à la ligne correspondante.
 
-Par exemple, supposons que vous simulez la stabilité de deux protéines à trois
-températures différentes avec et sans un agent stabilisant. Un fichier
-``params.txt`` contenant les 12 combinaisons possibles de ces paramètres peut
-être créé avec le script ``make-params.sh`` suivant :
+Par exemple, supposons que vous voulez simuler la stabilité de deux protéines à
+trois températures différentes avec et sans un agent stabilisant. Il vous
+faudra un fichier ``params.txt`` contenant les 12 combinaisons possibles de ces
+paramètres :
+
+.. code-block:: console
+    :linenos:
+
+    A 30 true
+    A 30 false
+    A 37 true
+    A 37 false
+    A 44 true
+    A 44 false
+    B 30 true
+    B 30 false
+    B 37 true
+    B 37 false
+    B 44 true
+    B 44 false
+
+Ce fichier peut être créé avec le script ``make-params.sh`` suivant :
 
 .. code-block:: bash
 
@@ -345,24 +366,8 @@ températures différentes avec et sans un agent stabilisant. Un fichier
         done
     done
 
-.. code-block:: console
-
-    [alice@narval1 ~]$ bash make-params.sh
-    [alice@narval1 ~]$ cat params.txt
-    A 30 true
-    A 30 false
-    A 37 true
-    A 37 false
-    A 44 true
-    A 44 false
-    B 30 true
-    B 30 false
-    B 37 true
-    B 37 false
-    B 44 true
-    B 44 false
-
-Le script du vecteur de tâches lit une ligne de ce fichier :
+Finalement, le script du vecteur de tâches extrait une seule ligne de
+``params.txt`` :
 
 .. code-block:: bash
     :emphasize-lines: 7
