@@ -326,9 +326,9 @@ combinaison par ligne. Chaque ligne est implicitement numérotée d’un indice
 linéaire :math:`i`. Pour convertir :math:`i → (x,y,z,...)`, il suffit de lire
 les valeurs à la ligne correspondante.
 
-Par exemple, supposons que vous simulez la stabilité de deux protéines à trois
-températures différentes avec et sans un agent stabilisant. Il vous faudra un
-fichier ``params.txt`` contenant les 12 combinaisons possibles de ces
+Par exemple, supposons que vous voulez simuler la stabilité de deux protéines à
+trois températures différentes avec et sans un agent stabilisant. Il vous
+faudra un fichier ``params.txt`` contenant les 12 combinaisons possibles de ces
 paramètres :
 
 .. code-block:: console
