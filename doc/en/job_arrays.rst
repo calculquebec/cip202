@@ -305,18 +305,18 @@ N-dimensionnal arrays
 When the number of parameters to work with exceeds two, converting the linear
 index :math:`i` to multidimensional indices with integer divisions and modulo
 becomes fastidious. There is a simple alternative: create a file containing all
-the desired parameter combinations, with one such combination per line. The line
-number in the file becomes the linear index :math:`i`. To convert :math:`i →
-(x,y,z,...)`, we just read the values on the corresponding line.
+the desired parameter combinations, with one such combination per line. Each
+line in the file is implicitly numbered with a linear index :math:`i`. To
+convert :math:`i → (x,y,z,...)`, we just read the values on the corresponding
+line.
 
-For example, suppose you simulate the stability of two proteins, at three
-different temperatures, with and without a stabilising agent. You would need a
-``params.txt`` file containing the 12 possible parameter combinations:
+For example, suppose you want to simulate the stability of two proteins, at
+three different temperatures, with and without a stabilising agent. You would
+need a ``params.txt`` file containing the 12 possible parameter combinations:
 
 .. code-block:: console
+    :linenos:
 
-    [alice@narval1 ~]$ bash make-params.sh
-    [alice@narval1 ~]$ cat params.txt
     A 30 true
     A 30 false
     A 37 true
